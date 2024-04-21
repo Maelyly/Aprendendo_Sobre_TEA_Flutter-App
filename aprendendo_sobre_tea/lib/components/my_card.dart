@@ -14,12 +14,34 @@ class MyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
       child: Card(
+        color: Color(0xFF68B2FF), // Set background color
+        elevation: 4, // Add elevation for shadow
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.0), // Set border radius
+        ),
         child: ListTile(
-          title: Text(title),
-          subtitle: Text(subtitle),
+          title: Center(
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 20.0, // Adjust text size as needed
+                color: Colors.white, // Set text color to white
+              ),
+            ),
+          ),
+          subtitle: Center(
+            child: Text(
+              subtitle,
+              style: TextStyle(
+                fontSize: 16.0, // Adjust text size as needed
+                color: Colors.white, // Set text color to white
+              ),
+            ),
+          ),
+          onTap: onTap,
         ),
       ),
     );
