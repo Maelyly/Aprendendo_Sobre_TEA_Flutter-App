@@ -35,6 +35,15 @@ class HomePage extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          Center(
+            child:Text(
+                'Vamos Aprender!',
+                style: TextStyle(color: Colors.black, fontSize: 40),
+              ),),
+           Center( child:  Text('Essa é uma aplicação para ajudar na aprendizagem do TRANSTORNO DE ESPECTRO AUTISTA', style: TextStyle(color: Colors.black, fontSize: 15),),),
+           Center( child:  Text('Escolha uma história e venha aprender!', style: TextStyle(color: Colors.black, fontSize: 20),),),
+          
+          SearchBar(),
           MyCard(
             title: 'Papai do Lulu em...',
             subtitle: 'Como conseguir o Cartão de Indentificação',
