@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './components/my_card.dart';
+// import './components/searchBar.dart';
 import 'detail_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,7 +34,16 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(
+      body: Column(
+        children: [
+           Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: 
+       SizedBox(
+           
+            width: 400,
+          child: ListView(
+            shrinkWrap: true,
         children: [
           Center(
             child:Text(
@@ -43,7 +53,9 @@ class HomePage extends StatelessWidget {
            Center( child:  Text('Essa é uma aplicação para ajudar na aprendizagem do TRANSTORNO DE ESPECTRO AUTISTA', style: TextStyle(color: Colors.black, fontSize: 15),),),
            Center( child:  Text('Escolha uma história e venha aprender!', style: TextStyle(color: Colors.black, fontSize: 20),),),
           
-          SearchBar(),
+          //SearchBar(),
+          //Search(),
+       
           MyCard(
             title: 'Papai do Lulu em...',
             subtitle: 'Como conseguir o Cartão de Indentificação',
@@ -75,8 +87,50 @@ class HomePage extends StatelessWidget {
             },
           ),
           // Add more cards as needed
-        ],
+        ],),),),],
       ),
+      // body: Stack(children: [
+      //   Card(
+      //     child: InkWell(
+      //       splashColor: Colors.blue.withAlpha(30),
+      //       onTap: () {
+      //         print('Card tapped.');
+      //       },
+      //       child: Container(
+      //         width: 300,
+      //         height: 100,
+      //         child: Text('A card that can be tapped'),
+      //       ),
+      //     ),
+      //   ),
+      //   Card(
+      //     child: InkWell(
+      //       splashColor: Colors.blue.withAlpha(30),
+      //       onTap: () {
+      //         print('Card tapped.');
+      //       },
+      //       child: Container(
+      //         width: 300,
+      //         height: 100,
+      //         child: Text('A card that can be tapped'),
+      //       ),
+      //     ),
+      //   ),])
+      //    Center(
+      //   child: Card(
+      //     child: InkWell(
+      //       splashColor: Colors.blue.withAlpha(30),
+      //       onTap: () {
+      //         print('Card tapped.');
+      //       },
+      //       child: Container(
+      //         width: 300,
+      //         height: 100,
+      //         child: Text('A card that can be tapped'),
+      //       ),
+      //     ),
+      //   ), 
+      // ),
     );
   }
 }
