@@ -3,9 +3,8 @@ import './components/my_card.dart';
 import './components/searchBarTEA.dart';
 import './components/storyCard.dart';
 import 'detail_page.dart';
-import 'list_page.dart';
 
-class HomePage extends StatelessWidget {
+class ListPage extends StatelessWidget {
   //const HomePage({super.key});
 
   @override
@@ -114,116 +113,44 @@ class HomePage extends StatelessWidget {
                 'Vamos Aprender!',
                 style: TextStyle(color: Colors.black, fontSize: 40),
               ),),
-           Center( child: Container(
-            margin: const EdgeInsets.only(top: 12.0, bottom: 10.0), 
-            child: Text('Essa é uma aplicação para ajudar na aprendizagem do TRANSTORNO DE ESPECTRO AUTISTA', style: TextStyle(color: Colors.black, fontSize: 15),),),),
-           Center( child:  Text('Escolha uma história e venha aprender!',textAlign: TextAlign.justify, style: TextStyle(color: Colors.black, fontSize: 20),),),
+           
           
-          //SearchBar(),
+          SizedBox(height:20),
+          SearchBar(),
           //Search(),
-       
-          // MyCard(
-          //   title: 'Papai do Lulu em...',
-          //   subtitle: 'Como conseguir o Cartão de Indentificação',
-          //   onTap: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) => DetailPage(
-          //           title: 'Papai do Lulu em...',
-          //           subtitle: 'Como conseguir o Cartão de Indentificação',
-          //         ),
-          //       ),
-          //     );
-          //   },
-          // ),
-          // MyCard(
-          //   title: 'Mamãe da Juju em...',
-          //   subtitle: 'O que é Seletividade Alimentar',
-          //   onTap: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) => DetailPage(
-          //           title: 'Mamãe da Juju em...',
-          //           subtitle: 'O que é Seletividade Alimentar',
-          //         ),
-          //       ),
-          //     );
-          //   },
-          // ),
-          
-         
-          MyCard(
-            title: 'Aprendendo com histórias',
-            subtitle: 'Para pessoas que querem começar do básico',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListPage(),
-                ),
-              );
-            },
-          ),
-          MyCard(
-            title: 'Aprendendo em menos tempo',
-            subtitle: 'Para pessoas com algum conhecimento na área',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListPage(),
-                ),
-              );
-            },
-          ),
 
-          
+          SizedBox(height:20),
+          StoryCard(
+              title: 'Papai do Lucas em...',
+              description: '“Como eu soube que Lucas era Autista”',
+              onTap: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Papai do Lucas em...',
+                    subtitle: 'Como eu soube que Lucas era Autista',
+                  ),
+                ),
+              );},
+            ),
+            SizedBox(height:20),
+            StoryCard(
+              title: 'Mamãe da Juju em...',
+              description: '“Problemas no Ano Novo”',
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Mamãe da Juju em...',
+                    subtitle: 'Problemas no Ano Novo',
+                  ),
+                ),
+              );},
+            ),
+        
         ],),),),],
       ),
-      // body: Stack(children: [
-      //   Card(
-      //     child: InkWell(
-      //       splashColor: Colors.blue.withAlpha(30),
-      //       onTap: () {
-      //         print('Card tapped.');
-      //       },
-      //       child: Container(
-      //         width: 300,
-      //         height: 100,
-      //         child: Text('A card that can be tapped'),
-      //       ),
-      //     ),
-      //   ),
-      //   Card(
-      //     child: InkWell(
-      //       splashColor: Colors.blue.withAlpha(30),
-      //       onTap: () {
-      //         print('Card tapped.');
-      //       },
-      //       child: Container(
-      //         width: 300,
-      //         height: 100,
-      //         child: Text('A card that can be tapped'),
-      //       ),
-      //     ),
-      //   ),])
-      //    Center(
-      //   child: Card(
-      //     child: InkWell(
-      //       splashColor: Colors.blue.withAlpha(30),
-      //       onTap: () {
-      //         print('Card tapped.');
-      //       },
-      //       child: Container(
-      //         width: 300,
-      //         height: 100,
-      //         child: Text('A card that can be tapped'),
-      //       ),
-      //     ),
-      //   ), 
-      // ),
+ 
     );
   }
 }
