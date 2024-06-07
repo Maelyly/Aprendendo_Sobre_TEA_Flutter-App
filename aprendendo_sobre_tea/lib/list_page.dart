@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './components/my_card.dart';
-import './components/searchBarTEA.dart';
+import './components/buttons.dart';
 import './components/storyCard.dart';
 import 'detail_page.dart';
 
@@ -110,25 +110,62 @@ class ListPage extends StatelessWidget {
         children: [
           Center(
             child:Text(
-                'Vamos Aprender!',
-                style: TextStyle(color: Colors.black, fontSize: 40),
+                'Aprendendo com histórias',
+                style: TextStyle(color: Colors.black, fontSize: 30),
               ),),
            
           
           SizedBox(height:20),
-          SearchBar(),
-          //Search(),
-
+        
+TextField(
+      decoration: InputDecoration(
+        hintText: 'O que você procura?',
+        prefixIcon: Icon(Icons.search),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+          borderSide: BorderSide.none,
+        ),
+        filled: true,
+        contentPadding: EdgeInsets.all(16.0),
+      ),
+    ),
+    SizedBox(height:20),
+   Row(
+      mainAxisAlignment: MainAxisAlignment.center, // Centraliza os botões na linha
+      children: [
+        Buttons(
+          text: 'Hiperfoco',
+          onTap: () {
+            print('Botão 1 pressionado');
+          },
+        ),
+       
+        SizedBox(width: 8.0), // Espaço entre os botões
+        Buttons(
+          text: 'Alimentação',
+          onTap: () {
+            print('Botão 3 pressionado');
+          },
+        ),
+        SizedBox(width: 8.0), // Espaço entre os botões
+        Buttons(
+          text: 'Hipersensibilidade',
+          onTap: () {
+            print('Botão 4 pressionado');
+          },
+        ),
+      ],
+    ),
           SizedBox(height:20),
           StoryCard(
-              title: 'Papai do Lucas em...',
-              description: '“Como eu soube que Lucas era Autista”',
+              title: 'Professor Jorge em...',
+              description: '“Como lidar com Hiperfoco”',
               onTap: () {Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DetailPage(
-                    title: 'Papai do Lucas em...',
-                    subtitle: 'Como eu soube que Lucas era Autista',
+                    title: 'Professor Jorge em...',
+                    subtitle: 'Como lidar com Hiperfoco',
                   ),
                 ),
               );},
