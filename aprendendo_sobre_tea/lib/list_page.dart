@@ -3,6 +3,9 @@ import './components/my_card.dart';
 import './components/buttons.dart';
 import './components/storyCard.dart';
 import 'detail_page.dart';
+import 'settings_page.dart';
+import 'home_page.dart';
+import 'about_us_page.dart';
 
 class ListPage extends StatelessWidget {
   //const HomePage({super.key});
@@ -50,6 +53,16 @@ class ListPage extends StatelessWidget {
                   fontSize: 24,
                 ),
               ),
+            ),ListTile(
+              title: Text('Página Inicial'),
+               onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
             ),
             ListTile(
               title: Text('Histórias sobre Sintomas'),
@@ -91,7 +104,24 @@ class ListPage extends StatelessWidget {
               title: Text('Sobre o App'),
               onTap: () {
                 Navigator.pop(context); // Fechar o drawer
-                Navigator.pushNamed(context, '/sobre'); // Navegar para a página "Sobre"
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AboutUsPage(),
+                ),
+              ); // Navegar para a página "Sobre"
+              },
+            ),
+            ListTile(
+              title: Text('Personalize seu App'),
+              onTap: () {
+                Navigator.pop(context); // Fechar o drawer
+               Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SettingsPage(),
+                ),
+              );  // Navegar para a página "Sobre"
               },
             ),
           ],

@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import './components/my_card.dart';
-import './components/storyCard.dart';
-import 'detail_page.dart';
 import 'list_page.dart';
 import 'settings_page.dart';
-import 'about_us_page.dart';
+import 'home_page.dart';
 
-class HomePage extends StatelessWidget {
-  //const HomePage({super.key});
+class AboutUsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
+   appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: Card(
           margin: EdgeInsets.only(bottom: 10.0),
@@ -106,7 +102,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AboutUsPage(),
+                  builder: (context) => ListPage(),
                 ),
               ); // Navegar para a página "Sobre"
               },
@@ -137,44 +133,20 @@ class HomePage extends StatelessWidget {
           child: ListView(
             shrinkWrap: true,
         children: [
-          Center(
-            child:Text(
-                'Vamos Aprender!',
-                style: TextStyle(color: Colors.black, fontSize: 40),
-              ),),
-           Center( child: Container(
-            margin: const EdgeInsets.only(top: 12.0, bottom: 10.0), 
-            child: Text('Essa é uma aplicação para ajudar na aprendizagem do TRANSTORNO DE ESPECTRO AUTISTA', style: TextStyle(color: Colors.black, fontSize: 15),),),),
-           Center( child:  Text('Escolha uma história e venha aprender!',textAlign: TextAlign.justify, style: TextStyle(color: Colors.black, fontSize: 20),),),
-          MyCard(
-            title: 'Aprendendo com histórias',
-            subtitle: 'Para pessoas que querem começar do básico',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListPage(),
-                ),
-              );
-            },
-          ),
-          MyCard(
-            title: 'Aprendendo em menos tempo',
-            subtitle: 'Para pessoas com algum conhecimento na área',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListPage(),
-                ),
-              );
-            },
-          ),
-
-          
-        ],),),),],
+            Center( child: Text(
+              'Sobre o APP ',
+              style: TextStyle(fontSize: 24.0),
+            ),),
+            SizedBox(height: 10.0),
+            Center( child:Text(
+              'Aprendendo Sobre TEA',
+              style: TextStyle(fontSize: 18.0),
+            ),),
+            SizedBox(height: 12.0),
+            Text('Aplicatico para compartilhar conhecimento sobre Transtorno de Espectro Autista para professores, responsáveis e pessoas em geral que convivem com pessoas dentro do espectro. Através de histórias contadas de forma lúdica são debatidos temas como sintomas, comportamentos e vivências sobre o tema.',style: TextStyle(fontSize: 14.0),)
+          ],
+        ),),),]
       ),
-                   
     );
   }
 }

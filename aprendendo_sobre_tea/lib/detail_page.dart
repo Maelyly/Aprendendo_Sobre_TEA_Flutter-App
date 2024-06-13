@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'list_page.dart';
+import 'settings_page.dart';
+import 'home_page.dart';
+import 'about_us_page.dart';
 
 class DetailPage extends StatelessWidget {
   final String title;
@@ -13,7 +17,7 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: PreferredSize(
+   appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: Card(
           margin: EdgeInsets.only(bottom: 10.0),
@@ -53,6 +57,16 @@ class DetailPage extends StatelessWidget {
                   fontSize: 24,
                 ),
               ),
+            ),ListTile(
+              title: Text('Página Inicial'),
+               onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
             ),
             ListTile(
               title: Text('Histórias sobre Sintomas'),
@@ -94,7 +108,24 @@ class DetailPage extends StatelessWidget {
               title: Text('Sobre o App'),
               onTap: () {
                 Navigator.pop(context); // Fechar o drawer
-                Navigator.pushNamed(context, '/sobre'); // Navegar para a página "Sobre"
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AboutUsPage(),
+                ),
+              ); // Navegar para a página "Sobre"
+              },
+            ),
+            ListTile(
+              title: Text('Personalize seu App'),
+              onTap: () {
+                Navigator.pop(context); // Fechar o drawer
+               Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SettingsPage(),
+                ),
+              );  // Navegar para a página "Sobre"
               },
             ),
           ],
