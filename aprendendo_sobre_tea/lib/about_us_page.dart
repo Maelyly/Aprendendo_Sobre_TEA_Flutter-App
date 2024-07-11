@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'list_page.dart';
 import 'settings_page.dart';
 import 'home_page.dart';
+import 'detail_page.dart';
+import 'package:provider/provider.dart';
+import './components/globalVariable.dart';
 
 class AboutUsPage extends StatelessWidget {
 
@@ -61,39 +64,81 @@ class AboutUsPage extends StatelessWidget {
             ),
             ListTile(
               title: Text('Histórias sobre Sintomas'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Mamãe da Juju em...',
+                    subtitle: 'Problemas no Ano Novo',
+                    tema: '2'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias de Escola'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Professor Júlio em...',
+                    subtitle: 'Hiperfoco em sala de aula',
+                    tema: '1'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias com a Psiquiatra'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Professor Júlio em...',
+                    subtitle: 'Hiperfoco em sala de aula',
+                    tema: '1'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias com a Psicóloga'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                   title: 'Mamãe da Juju em...',
+                    subtitle: 'Problemas no Ano Novo',
+                    tema: '2'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias com os Familiares'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                   title: 'Mamãe da Juju em...',
+                    subtitle: 'Problemas no Ano Novo',
+                    tema: '2'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias com o Professor'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Professor Júlio em...',
+                    subtitle: 'Hiperfoco em sala de aula',
+                    tema: '1'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Sobre o App'),
@@ -102,7 +147,7 @@ class AboutUsPage extends StatelessWidget {
                 Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ListPage(),
+                  builder: (context) => AboutUsPage(),
                 ),
               ); // Navegar para a página "Sobre"
               },

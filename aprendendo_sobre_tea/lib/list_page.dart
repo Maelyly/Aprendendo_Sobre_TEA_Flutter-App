@@ -66,39 +66,81 @@ class ListPage extends StatelessWidget {
             ),
             ListTile(
               title: Text('Histórias sobre Sintomas'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Mamãe da Juju em...',
+                    subtitle: 'Problemas no Ano Novo',
+                    tema: '2'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias de Escola'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Professor Júlio em...',
+                    subtitle: 'Hiperfoco em sala de aula',
+                    tema: '1'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias com a Psiquiatra'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Professor Júlio em...',
+                    subtitle: 'Hiperfoco em sala de aula',
+                    tema: '1'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias com a Psicóloga'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                   title: 'Mamãe da Juju em...',
+                    subtitle: 'Problemas no Ano Novo',
+                    tema: '2'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias com os Familiares'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                   title: 'Mamãe da Juju em...',
+                    subtitle: 'Problemas no Ano Novo',
+                    tema: '2'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Histórias com o Professor'),
-              onTap: () {
-                Navigator.pop(context); // Fechar o drawer
-              },
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Professor Júlio em...',
+                    subtitle: 'Hiperfoco em sala de aula',
+                    tema: '1'
+                  ),
+                ),
+              );},
             ),
             ListTile(
               title: Text('Sobre o App'),
@@ -165,37 +207,46 @@ TextField(
       children: [
         Buttons(
           text: 'Hiperfoco',
-          onTap: () {
-            print('Botão 1 pressionado');
-          },
+          onTap: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Professor Júlio em...',
+                    subtitle: 'Como lidar com Hiperfoco',
+                    tema: '1'
+                  ),
+                ),
+              );},
+          
         ),
        
         SizedBox(width: 8.0), // Espaço entre os botões
         Buttons(
-          text: 'Alimentação',
-          onTap: () {
-            print('Botão 3 pressionado');
-          },
-        ),
-        SizedBox(width: 8.0), // Espaço entre os botões
-        Buttons(
           text: 'Hipersensibilidade',
-          onTap: () {
-            print('Botão 4 pressionado');
-          },
+         onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                   title: 'Mamãe da Juju em...',
+                    subtitle: 'Problemas no Ano Novo',
+                    tema: '1'
+                  ),
+                ),
+              );},
         ),
       ],
     ),
           SizedBox(height:20),
           StoryCard(
-              title: 'Professor Jorge em...',
+              title: 'Professor Júlio em...',
               description: '“Como lidar com Hiperfoco”',
               onTap: () {Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DetailPage(
-                    title: 'Professor Jorge em...',
+                    title: 'Professor Júlio em...',
                     subtitle: 'Como lidar com Hiperfoco',
+                    tema: '1'
                   ),
                 ),
               );},
@@ -210,6 +261,7 @@ TextField(
                   builder: (context) => DetailPage(
                     title: 'Mamãe da Juju em...',
                     subtitle: 'Problemas no Ano Novo',
+                    tema: '2'
                   ),
                 ),
               );},

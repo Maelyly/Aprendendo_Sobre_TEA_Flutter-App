@@ -52,10 +52,20 @@ android {
     }
 
     buildTypes {
+      
+         release {
+            // Signing with the debug keys for now, so flutter run --release works.
+            signingConfig = signingConfigs.release
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+    signingConfigs {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.release
+            keyAlias 'AST'
+            keyPassword '126612'
+            storeFile file('C:/Users/Maely-PC/Aprendendo_Sobre_TEA_Flutter-App/aprendendo_sobre_tea/aprendendoSobreTea.jks')
+            storePassword '126612'
         }
     }
 }

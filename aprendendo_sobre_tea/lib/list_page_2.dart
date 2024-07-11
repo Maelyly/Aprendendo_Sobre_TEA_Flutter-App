@@ -1,17 +1,17 @@
+import 'package:flutter/material.dart';
+import './components/my_card.dart';
+import './components/buttons.dart';
+import './components/storyCard.dart';
 import 'detail_page.dart';
-import 'list_page.dart';
+import 'settings_page.dart';
 import 'home_page.dart';
 import 'about_us_page.dart';
-import './components/globalVariable.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import './components/buttons.dart';
 
-class SettingsPage extends StatelessWidget {
+class ListPage2 extends StatelessWidget {
+  //const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    GlobalState globalState = Provider.of<GlobalState>(context);
-
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
@@ -20,24 +20,25 @@ class SettingsPage extends StatelessWidget {
           elevation: 2,
           color: Color(0xFF68B2FF),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.zero,
+            borderRadius: BorderRadius.zero, // Set border radius to zero
           ),
           child: AppBar(
             elevation: 0,
             backgroundColor: Colors.transparent,
             title: Center(
-              child: Text(
-                'Aprendendo Sobre TEA',
-                style: TextStyle(
-                  fontSize: 25.0,
-                  color: Colors.white,
-                ),
+                child: Text(
+              'Aprendendo Sobre TEA',
+              style: TextStyle(
+                fontSize: 25.0, // Adjust text size as needed
+                color: Colors.white, // Set text color to white
               ),
-            ),
+            )),
             iconTheme: IconThemeData(color: Colors.white),
+            //actions: [IconButton(icon: Icon(Icons.menu), onPressed: () {})],
           ),
         ),
-      ),drawer: Drawer(
+      ),
+      drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -168,100 +169,107 @@ class SettingsPage extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Diálogos',
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    globalState.updateTypeDialog('2');
-                  },
-                  child: Text('Muito Diálogo'),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 16.0),
-                  ),
-                ),
-                 SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    globalState.updateTypeDialog('1');
-                  },
-                  child: Text('Pouco Diálogo'),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 16.0),
-                  ),
-                ),
-                 SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    globalState.updateTypeDialog('2');
-                  },
-                  child: Text('Diálogo Balanceado'),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 16.0),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            Text(
-              'Imagens',
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    globalState.updateTypeImage('1');
-                  },
-                  child: Text('Opção 1'),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 16.0),
-                  ),
-                ),
-                 SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    globalState.updateTypeImage('2');
-                  },
-                  child: Text('Opção 2'),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 16.0),
-                  ),
-                ),
-                 SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    globalState.updateTypeImage('3');
-                  },
-                  child: Text('Opção 3'),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 16.0),
-                  ),
-                ),
-              ],
-            ),
-          ],
+      body: Column(
+        children: [
+           Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: 
+       SizedBox(
+           
+            width: 400,
+          child: ListView(
+            shrinkWrap: true,
+        children: [
+          Center(
+            child:Text(
+                'Aprendendo com histórias',
+                style: TextStyle(color: Colors.black, fontSize: 30),
+              ),),
+           
+          
+          SizedBox(height:20),
+        
+TextField(
+      decoration: InputDecoration(
+        hintText: 'O que você procura?',
+        prefixIcon: Icon(Icons.search),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+          borderSide: BorderSide.none,
         ),
+        filled: true,
+        contentPadding: EdgeInsets.all(16.0),
       ),
+    ),
+    SizedBox(height:20),
+   Row(
+      mainAxisAlignment: MainAxisAlignment.center, // Centraliza os botões na linha
+      children: [
+ Buttons(
+          text: 'Hiperfoco',
+          onTap: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Professor Júlio em...',
+                    subtitle: 'Como lidar com Hiperfoco',
+                    tema: '1'
+                  ),
+                ),
+              );},
+          
+        ),
+       
+        SizedBox(width: 8.0), // Espaço entre os botões
+        Buttons(
+          text: 'Hipersensibilidade',
+         onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                   title: 'Mamãe da Juju em...',
+                    subtitle: 'Problemas no Ano Novo',
+                    tema: '1'
+                  ),
+                ),
+              );},
+        ),
+      ],
+    ),
+          SizedBox(height:20),
+          StoryCard(
+              title: 'Hipersensibilidade',
+              description: '“”',
+              onTap: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Hipersensibilidade',
+                    subtitle: '',
+                    tema: '2'
+                  ),
+                ),
+              );},
+            ),
+            SizedBox(height:20),
+            StoryCard(
+              title: 'Hiperfoco',
+              description: '“ou interesse especial”',
+              onTap: () { Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(
+                    title: 'Hiperfoco',
+                    subtitle: 'ou interesse especial',
+                    tema: '2'
+                  ),
+                ),
+              );},
+            ),
+        
+        ],),),),],
+      ),
+ 
     );
   }
 }
-
