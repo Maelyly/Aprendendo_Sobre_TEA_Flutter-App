@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'home_page.dart';
+import './components/globalVariable.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+    return ChangeNotifierProvider(
+      create: (context) => GlobalState(),
+      child:MaterialApp(
+      title: 'Aprendendo sobre TEA',
+      home: HomePage(),
+    ));
   }
 }
